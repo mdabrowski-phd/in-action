@@ -1,7 +1,7 @@
 # dplyr in Action: Analyzing Flight Data
 
 # Load the `nycflights13` package to access the `flights` data frame
-install.packages("nycflights13") # once per machine
+#install.packages("nycflights13") # once per machine
 library("nycflights13")          # in each relevant script
 library("dplyr")                 # load the dplyr library
 library("ggplot2")               # for plotting
