@@ -32,6 +32,7 @@ expenditure_chart <- ggplot(data = expenditure_plot_data) +
     title = indicator, x = "Expenditure 1990",
     y = "Expenditure 2014"
   )
+expenditure_chart
 
 # Reshape the data to create a new column for the `year`
 long_year_data <- wb_data %>%
@@ -57,6 +58,7 @@ spain_chart <- ggplot(data = spain_plot_data) +
   geom_line(mapping = aes(x = year, y = value / 100)) +
   scale_y_continuous(labels = percent) +
   labs(title = chart_title, x = "Year", y = "Percent of GDP Expenditure")
+spain_chart
 
 # Reshape the data to create columns for each indicator
 wide_data <- long_year_data %>%
@@ -86,3 +88,4 @@ lit_chart <- ggplot(data = lit_plot_data) +
     y = "Unemployment, female (% of female labor force)",
     title = "Female Literacy Rate versus Female Unemployment Rate"
   )
+lit_chart
