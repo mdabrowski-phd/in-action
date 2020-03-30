@@ -9,15 +9,15 @@ library(ggrepel)
 # You need to use a particular branch of the development version of ggmap 
 # by running this code
 library(devtools) # for installing packages from GitHub
-devtools::install_github("dkahle/ggmap", ref = "tidyup")
+#devtools::install_github("dkahle/ggmap", ref = "tidyup")
 library(ggmap)
+
+# Load your Yelp API key from a separate file so that you can access the API:
+source("api_key.R") # the `yelp_key` and `google_key` variables are now available
 
 # Register your Google API Key
 # See: https://developers.google.com/maps/documentation/geocoding/get-api-key
-register_google(key="YOUR_GOOGLE_KEY")
-
-# Load your Yelp API key from a separate file so that you can access the API:
-source("api_key.R") # the `yelp_key` variable is now available
+register_google(key = google_key)
 
 # Construct a search query for the Yelp Fusion API's Business Search endpoint
 base_uri <- "https://api.yelp.com/v3"
@@ -50,7 +50,6 @@ names(response_data) # [1] "businesses" "total" "region"
 
 # Flatten the data frame stored in the `businesses` key of the response
 restaurants <- flatten(response_data$businesses)
-
 
 # Modify the data frame for analysis and presentation
 # Generate a rank of each restaurant based on row number
