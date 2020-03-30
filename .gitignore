@@ -36,4 +36,4 @@ vignettes/*.pdf
 rsconnect/
 
 # API key for Yelp Fusion API and Google API
-*api_key.R
+/apis/api_key.R
