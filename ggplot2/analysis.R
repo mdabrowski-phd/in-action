@@ -7,12 +7,12 @@ library("tidyr")
 # You need to use a particular branch of the development version of ggmap 
 # by running this code
 library(devtools) # for installing packages from GitHub
-devtools::install_github("dkahle/ggmap", ref = "tidyup")
+#devtools::install_github("dkahle/ggmap", ref = "tidyup")
 library(ggmap)
 
 # Load .csv file of notices
 # Data downloaded from https://catalog.data.gov/dataset/eviction-notices
-eviction_notices <- read.csv("data/Eviction_Notices.csv", stringsAsFactors = F)
+eviction_notices <- read.csv("data/Eviction_Notices.csv", stringsAsFactors = FALSE)
 
 # Data wrangling: format dates, filter to 2017 notices, extract lat/long data
 notices <- eviction_notices %>%
@@ -28,7 +28,8 @@ notices <- eviction_notices %>%
 
 # Register your Google API Key
 # See: https://developers.google.com/maps/documentation/geocoding/get-api-key
-register_google(key="YOUR_GOOGLE_KEY")
+source("../apis/api_key.R")
+register_google(key = google_key)
 
 # Create the background of map tiles
 base_plot <- qmplot(
