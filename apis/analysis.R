@@ -65,6 +65,8 @@ base_map <- ggmap(
     source = "google")
 )
 
+#base_map <- ggmap(get_map(location = "Seattle, WA", zoom = 11))
+
 # Add labels to the map based on the coordinates in the data
 base_map + geom_label_repel(
   data = restaurants,
