@@ -3,6 +3,7 @@
 # Load required packages
 library(plotly)
 library(dplyr)
+#install.packages(leaflet)
 library(leaflet)
 
 # Load data downloaded from https://data.seattle.gov/Permitting/Building-Permits/76t5-zqzr
