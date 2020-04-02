@@ -6,8 +6,7 @@ library(rworldmap) # for easy mapping
 library(RColorBrewer) # for selecting a color palette
 
 # Load the data, skipping unnecessary rows
-life_exp <- read.csv(
-  "data/API_SP.DYN.LE00.IN_DS2_en_csv_v2.csv",
+life_exp <- read.csv("data/API_SP.DYN.LE00.IN_DS2_en_csv_v2.csv",
   skip = 4,
   stringsAsFactors = FALSE
 )
