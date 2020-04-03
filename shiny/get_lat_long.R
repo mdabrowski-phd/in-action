@@ -7,7 +7,7 @@ library(ggmap)
 library(dplyr)
 
 # Load and google maps API key (you'll need to get your own)
-source("api_key.R")
+source("../apis/api_key.R")
 register_google(key = google_key)
 
 # Load data from GitHub
